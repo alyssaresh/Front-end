@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import MainHeader from './components/MainPageHeader/MainHeader';
 import NetflixMainScreen from './components/NetflixMainScreen/NetflixMainScreen';
 import NetflixMovieScroll from './components/NetflixMainScreen/NetflixMovieScroll';
-import TwittersectionDisplay from './components/Twitter/Twitter';
+import TwitterSectionDisplay from './components/Twitter/Twitter';
+import MoviePage from "./Pages/MoviePage";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import UploadMovie from "./Pages/UploadMovie";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Account from "./Pages/Account";
+
+
 
 const AppLayout = () => {
   const layoutStyle = {
@@ -32,6 +39,7 @@ const AppLayout = () => {
     flexDirection: 'column',
     flex: 3, // Allocate more space to Netflix section
     gap: '1rem', // Add spacing between the two Netflix components
+    overflowY: 'auto',
   };
 
   const twitterSection = {
@@ -40,25 +48,36 @@ const AppLayout = () => {
    // overflowY: 'auto', // Allow scrolling if content overflows
   };
 
+
   return (
-    <div style={layoutStyle}>
+      <Router>
+          <div style={layoutStyle}>
       {/* Header */}
       <MainHeader />
+        <div style={contentContainer}>
+          {/* Netflix Column */}
+          <div style={netflixColumn}>
+            <Routes>
+              {/* Netflix Main Screen */}
+              <Route path="/" element={<NetflixMainScreen />} />
 
-      {/* Main Content: Netflix Column and Twitter Section */}
-      <div style={contentContainer}>
-        {/* Netflix Column */}
-        <div style={netflixColumn}>
-          <NetflixMainScreen />
-          <NetflixMovieScroll/>
-        </div>
+              {/* Movie Page */}
+              <Route path="/movie/:id" element={<MoviePage />} />
+
+              {/* Upload Movie Page */}
+              <Route path="/upload-movie" element={<UploadMovie />} />
+
+              <Route path="/my-profile" element={<Account />} />
+            </Routes>
+          </div>
 
         {/* Twitter Section */}
         <div style={twitterSection}>
-          <TwittersectionDisplay />
+          <TwitterSectionDisplay />
         </div>
       </div>
-    </div>
+            </div>
+          </Router>
   );
 };
 
