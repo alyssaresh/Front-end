@@ -91,6 +91,7 @@ const NetflixMainScreen = ({onMovieSelect}) => {
   const sciFiMovies = movies.filter(movie => movie.genres && movie.genres.some(genre => genre.title === 'Sci-Fi'));
   const animationMovies = movies.filter(movie => movie.genres && movie.genres.some(genre => genre.title === 'Animation'));
   const actionMovies = movies.filter(movie => movie.genres && movie.genres.some(genre => genre.title === 'Action'));
+  const fantasyMovies = movies.filter(movie => movie.genres && movie.genres.some(genre => genre.title === 'Fantasy'));
 
   const sortedMovies = [...movies].sort((a, b) => b.id - a.id);
     const maxMoviesToShow = 10;
@@ -106,6 +107,7 @@ const NetflixMainScreen = ({onMovieSelect}) => {
             <NetflixMovieScroll title="Drama Movies" movies={dramaMovies} loading={loading} onMovieSelect={onMovieSelect}/>
             <NetflixMovieScroll title="Sci-Fi Movies" movies={sciFiMovies} loading={loading} onMovieSelect={onMovieSelect}/>
             <NetflixMovieScroll title="Animated Movies" movies={animationMovies} loading={loading} onMovieSelect={onMovieSelect} />
+            <NetflixMovieScroll title="Fantasy Movies" movies={fantasyMovies} loading={loading} onMovieSelect={onMovieSelect} />
         </div>
     );
 
