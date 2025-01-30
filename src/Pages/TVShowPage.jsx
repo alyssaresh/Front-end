@@ -8,7 +8,7 @@ const TVShowPage = ({ tvShows = [] }) => {
   const categories = {
     Drama: tvShows.filter((show) => show.genre.includes('Drama')),
     Comedy: tvShows.filter((show) => show.genre.includes('Comedy')),
-    'Sci-Fi': tvShows.filter((show) => show.genre.includes('Sci-Fi')),
+    SciFi: tvShows.filter((show) => show.genre.includes('Sci-fi')),
     Fantasy: tvShows.filter((show) => show.genre.includes('Fantasy')),
     Action: tvShows.filter((show) => show.genre.includes('Action')),
     Historical: tvShows.filter((show) => show.genre.includes('Historical')),

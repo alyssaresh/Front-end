@@ -8,9 +8,8 @@ const MoviesPage = ({ movies }) => {
     Action: movies.filter((movie) => movie.genre?.includes('Action')),
     Comedy: movies.filter((movie) => movie.genre?.includes('Comedy')),
     Drama: movies.filter((movie) => movie.genre?.includes('Drama')),
-    SciFi: movies.filter((movie) => movie.genre?.includes('Sci-Fi')),
+    SciFi: movies.filter((movie) => movie.genre?.includes('Sci-fi')),
     Animation: movies.filter((movie) => movie.genre?.includes('Animation')),
-    Horror: movies.filter((movie) => movie.genre?.includes('Horror')),
   };
 
 //   const handleMovieClick = (movieId) => {

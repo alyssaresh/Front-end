@@ -214,7 +214,7 @@ const movies = [
               releaseDate: '1982',
               length: '109 minutes',
               description: 'A research team in Antarctica is hunted by a shape-shifting alien that assumes the appearance of its victims.',
-              thumbnail: '/video-thumbnails/Thing.png',
+              thumbnail: '/video-thumbnails/The Thing.png',
               videoUrl: '/Trailers/the Iron Giant.mp4'
             },
             { contentId: 15,
